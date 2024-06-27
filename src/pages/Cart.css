@@ -1,0 +1,44 @@
+.cart {
+    padding: 20px;
+  }
+  
+  .cart h2 {
+    text-align: center;
+  }
+  
+  .cart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .cart table, .cart th, .cart td {
+    border: 1px solid #ddd;
+  }
+  
+  .cart th, .cart td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .cart input[type="number"] {
+    width: 60px;
+  }
+  
+  .cart button {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .cart button:hover {
+    background-color: #d32f2f;
+  }
+  
+  .cart .total {
+    text-align: right;
+    margin-top: 20px;
+  }
+  

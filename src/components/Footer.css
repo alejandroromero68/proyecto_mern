@@ -1,0 +1,34 @@
+.footer {
+    background-color: #20b2aa; /* Color verde agua */
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .social-links {
+    margin-top: 10px;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+    display: inline-block;
+  }
+  
+  .social-links img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1); /* Cambia los iconos a blanco */
+  }
+  
+  .footer {
+    background-color: #8ed1c3; /* Cambia al mismo color del menú */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
