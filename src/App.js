@@ -4,9 +4,11 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
 import Contact from './pages/Contact';
+import Login from './pages/Login'; // Importa el componente Login
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { CartProvider } from './contexts/CartContext'; // Importa el CartProvider
+import { CartProvider } from './context/CartContext';
+
 
 const App = () => {
   return (
@@ -18,11 +20,12 @@ const App = () => {
           <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} /> {/* Añade la ruta de login */}
         </Routes>
         <Footer />
       </Router>
     </CartProvider>
   );
-}
+};
 
 export default App;
