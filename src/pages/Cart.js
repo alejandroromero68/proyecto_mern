@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+// /frontend/src/pages/Cart.js
+import React, { useContext, useCallback } from 'react';
 import { CartContext } from '../context/CartContext';
 import './Cart.css';
 
@@ -10,6 +11,40 @@ const Cart = () => {
     if (quantity > 0) {
       updateQuantity(productId, quantity);
     }
+  };
+
+  const saveCartToDatabase = useCallback(async () => {
+    console.log('Guardando pedido...');
+    const items = cartItems.map(item => ({
+      ...item,
+      id: item.id.toString(),  // Convertir id a cadena
+    }));
+    console.log('Cart Items:', items);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ cartItems: items }),
+      });
+      console.log(response);
+      if (response.ok) {
+        console.log('Pedido guardado en la base de datos');
+        // Aquí podrías añadir lógica adicional después de guardar el pedido, como limpiar el carrito
+      } else {
+        const errorMessage = await response.text();
+        console.error('Error al guardar el pedido en la base de datos:', response.statusText, errorMessage);
+      }
+    } catch (error) {
+      console.error('Error al conectar con el servidor', error);
+    }
+  }, [cartItems]);
+
+  const handleSaveButtonClick = () => {
+    console.log('Botón Guardar Pedido clickeado');
+    saveCartToDatabase();
   };
 
   return (
@@ -53,6 +88,7 @@ const Cart = () => {
         <h3>
           Total: ${cartItems.reduce((total, item) => total + item.price * item.quantity, 0)}
         </h3>
+        <button onClick={handleSaveButtonClick}>Guardar Pedido</button>
       </div>
     </div>
   );

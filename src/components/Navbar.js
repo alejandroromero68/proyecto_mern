@@ -13,6 +13,7 @@ const Navbar = () => {
         <li className="navbar-item">
           <Link to="/products">Productos</Link>
         </li>
+ 
         <li className="navbar-item">
           <Link to="/cart"><FaShoppingCart /> Carrito</Link>
         </li>
@@ -22,6 +23,7 @@ const Navbar = () => {
         <li className="navbar-item">
           <Link to="/login"><FaUser /> Login</Link>
         </li>
+
       </ul>
     </nav>
   );

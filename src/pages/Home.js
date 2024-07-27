@@ -18,13 +18,13 @@ const Home = () => {
           {/* Aquí puedes agregar componentes de productos individuales */}
           <div className="product-item">
             <img src="/images/product1.jpg" alt="Producto 1" />
-            <h3>Producto 1</h3>
-            <p>$100</p>
+            <h3>Combo para PAPA</h3>
+            <p>$120000</p>
           </div>
           <div className="product-item">
             <img src="/images/product2.jpg" alt="Producto 2" />
-            <h3>Producto 2</h3>
-            <p>$200</p>
+            <h3>Remeras sublimadas</h3>
+            <p>$60000</p>
           </div>
           {/* Agrega más productos según sea necesario */}
         </div>
@@ -35,11 +35,11 @@ const Home = () => {
         <div className="category-list">
           <div className="category-item">
             <img src="/images/category1.jpg" alt="Categoría 1" />
-            <h3>Ropa</h3>
+            <h3>Sublimacion</h3>
           </div>
           <div className="category-item">
             <img src="/images/category2.jpg" alt="Categoría 2" />
-            <h3>Electrónica</h3>
+            <h3>Regalos personalizados</h3>
           </div>
           {/* Agrega más categorías según sea necesario */}
         </div>

@@ -1,0 +1,40 @@
+.register {
+    max-width: 400px;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .register h2 {
+    text-align: center;
+  }
+  
+  .register form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .register label {
+    margin-top: 0.5rem;
+  }
+  
+  .register input {
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+  }
+  
+  .register button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .register button:hover {
+    background-color: #005f5f;
+  }
+  

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import './Login.css';
+import './Register.css';
 
-const Login = () => {
+const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -11,19 +10,16 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/login', { email, password });
-      console.log(response);
+      const response = await axios.post('/api/register', { email, password });
       setMessage(response.data.message);
-      localStorage.setItem('token', response.data.token); // Guarda el token en el almacenamiento local
     } catch (error) {
-      setMessage('Error al iniciar sesión');
-      console.error(error);
+      setMessage('Error registering user');
     }
   };
 
   return (
-    <div className="login">
-      <h2>Login</h2>
+    <div className="register">
+      <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <label>Email:</label>
         <input
@@ -39,12 +35,11 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Login</button>
+        <button type="submit">Registro</button>
       </form>
       {message && <p>{message}</p>}
-      <p>¿No tienes una cuenta? <Link to="/register">Registrar aquí</Link></p>
     </div>
   );
 };
 
-export default Login;
+export default Register;
